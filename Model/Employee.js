@@ -19,10 +19,6 @@ class Employee extends Person {
     tinhLuong() {
         return this.soNgayLamViec * this.luongTheoNgay
     }
-    /**
-     * validation : kiểm tra tính hợp lệ của dữ liệu
-     * @showAlert {boolean}: xác định xem hiển thị thông báo lỗi lên phần tử html hay show alert
-     */
     checkSoNgayLamViec(showAlert) {
         this.soNgayLamViec = this.soNgayLamViec.replace(/\s/g, ''); // xoá mọi khoảng trắng trong string
         if (!this.soNgayLamViec) { // rỗng
@@ -59,11 +55,7 @@ class Employee extends Person {
         }
         return true
     }
-    /**
-     * validation : kiểm tra tính hợp lệ của dữ liệu
-     * @showAlert {boolean}: xác định xem hiển thị thông báo lỗi lên phần tử html hay show alert
-     * @list {array}: danh sách để kiểm tra xem id đã tồn tại trên hệ thống hay chưa, tránh trùng lặp id
-     */
+    
     validationEmployee(list, showAlert = false) {
         let res = super.validationPerson(list, showAlert)
         res &= this.checkSoNgayLamViec(showAlert)

@@ -11,11 +11,7 @@ const LOAI_CA_NHAN = {
     All: 'All'
 }
 const lstPerson = new ListPerson();
-/* function
--------------------------------------------------- */
-/**
- * hàm sẽ gắn sự kiện click cho dropdown loại person
- */
+
 const themFunctionVaoLoaiCaNhanSeThem = () => {
     let dropdown = document.querySelector('#caNhanDuocChon button');
     let dropdownItems = document.querySelectorAll('#caNhanDuocChon a.dropdown-item');
@@ -67,7 +63,7 @@ const disableControl = (key) => {
     }
 }
 /**
- * ẩn all thông báo lỗi (những thông báo lỗi ngay dưới input)
+ * ẩn thông báo lỗi (những thông báo lỗi ngay dưới input)
  */
 const anTatCaThongBaoLoi = () => {
     let tb = [

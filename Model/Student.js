@@ -16,7 +16,7 @@ let tbErrorHoa = 'tbErrorHoa'
 class Student extends Person {
     toan; ly; hoa;
     constructor(id, hoTen, diaChi, email, toan, ly, hoa) {
-        super(id, hoTen, diaChi, email) // lớp kế thừa bắt buộc phải gọi hàm của lớp cha, sau đó mới được viết thêm vào
+        super(id, hoTen, diaChi, email)
         this.toan = toan;
         this.ly = ly
         this.hoa = hoa
@@ -32,7 +32,7 @@ class Student extends Person {
             return false
         }
         let pa = /^(\d{1,2}(\.\d{1,2})?)$/
-        if (!pa.test(this.toan)) { // điểm không đúng địng dạng số thực
+        if (!pa.test(this.toan)) { // không đúng địng dạng số thực
             super.showError(tbErrorToan, ERROR_MESSAGE_STUDENT.toan_float, showAlert)
             return false
         }
@@ -79,11 +79,7 @@ class Student extends Person {
         }
         return true;
     }
-    /**
-     * kiểm tra tính hợp lệ của dữ liệu
-     * @list {array}: kiểm tra xem có trùng id không, 
-     * @showAlert {boolean}: xác định xem hiển thị thông báo lỗi lên phần tử html hay là lên alert
-     */
+    
     validationStudent(list, showAlert = false) {
         let res = super.validationPerson(list, showAlert)
         res &= this.checkToan(showAlert)

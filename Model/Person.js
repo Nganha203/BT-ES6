@@ -21,11 +21,7 @@ class Person {
         this.diaChi = diaChi
         this.email = email
     }
-    /**
-     * kiểm tra tính hợp lệ của dữ liệu
-     * @list {array}: để kiểm tra id có trùng lặp hay không
-     * @showElert {false}: xác định xem thông báo lỗi ở phần tử html hay alert
-     */
+    
     checkId(list, showElert = false) {
         this.id = String(this.id).replace(/\s/g, '')
         if (!this.id) { //
@@ -80,13 +76,7 @@ class Person {
         isValid &= this.checkEmail(showElert);
         return isValid
     }
-    /**
-     * hàm showError dùng để hiển thị thông báo khi dữ liệu không hợp lệ
-     * biến _showElert phải có giá trị bằng true thì mới show lỗi bằng alert được
-     * @tb  {string}: css selector đến phần tử html cần hiển thị lỗi
-     * @stringError {string}: câu thông báo lỗi
-     * @showElert {boolean}: xác định xem là thông báo lỗi lên phần tử html hay là lên alert
-     */
+   
     _showElert = true
     showError(tb, stringError, showElert = false) {
         if (showElert) {

@@ -15,10 +15,7 @@ class Customer extends Person {
         this.triGiaHoaDon = triGiaHoaDon
         this.danhGia = danhGia
     }
-    /**
-     * validation 
-     * @showAlert {boolean}  : xác định xem hiện thông báo trên thẻ html hay trên alert
-     */
+    
     checkTenCongTy(showAlert) {
         this.tenCongTy = this.tenCongTy.trim().split(/\s+/g).join(' ') // xoá mọi khoảng trắng thừa
         if (!this.tenCongTy) { // rỗng
@@ -45,11 +42,7 @@ class Customer extends Person {
         }
         return true
     }
-    /**
-     * validation 
-     * @showAlert {boolean}  : xác định xem hiện thông báo trên thẻ html hay trên alert
-     * @list {array}: list để kiểm tra xem id đã tồn tại trong hệ thống hay chưa. tránh trùng lặp id
-     */
+    
     validationCustomer(list, showAlert = false) {
         let res = super.validationPerson(list, showAlert)
         res &= this.checkTenCongTy(showAlert)
